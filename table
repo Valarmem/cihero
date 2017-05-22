@@ -1,0 +1,3 @@
+create table user (
+	id int auto-increment primary key ,
+)
