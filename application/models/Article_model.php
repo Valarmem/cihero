@@ -80,12 +80,22 @@ class Article_model extends CI_Model
 
 	public function tArticle() {
 		// $this->db->select('*');
-		// $this->db->from('articles');
+		$tables = $this->db->field_data('articles');;
 
 		// $query = $this->db->query('SELECT * FROM articles');
 		// $data = $this->db->field_data('articles');
-		$data = $this->db->list_fields('articles');
-		var_dump($data);
+		// $data = $this->db->list_fields('articles');
+		/*$this->db->start_cache();
+		$this->db->select('title,content');
+		$this->db->stop_cache();
+		$articles = $this->db->get('articles')->result_array();*/
+
+
+		var_dump($tables);
+
+		// return $articles;
+		//Generates: SELECT `field1` FROM (`tablename`)
+
 	}
 
 }

@@ -1221,3 +1221,341 @@ $this->db->flush_cache()
 	$this->db->select('field2');
 	$this->db->get('tablename');
 	//Generates:  SELECT `field2` FROM (`tablename`)
+
+/**
+ * 重置查询构造器
+ */
+$this->db->reset_query()
+	// 该方法无需执行就能重置查询构造器中的查询，$this->db->get()
+	// 和 $this->db->insert() 方法也可以用于重置查询，但是必须要先
+	// 执行它。和这两个方法一样，使用`查询构造器缓存`_ 缓存下来的查
+	// 询不会被重置。
+
+	// 当你在使用查询构造器生成 SQL 语句（如：$this->db->get_compiled_select()），
+	// 之后再执行它。这种情况下，不重置查询缓存将非常有用:
+
+		// Note that the second parameter of the get_compiled_select method is FALSE
+		$sql = $this->db->select(array('field1','field2'))
+		                ->where('field3',5)
+		                ->get_compiled_select('mytable', FALSE);
+
+		// ...
+		// Do something crazy with the SQL code... like add it to a cron script for
+		// later execution or something...
+		// ...
+
+		$data = $this->db->get()->result_array();
+
+		// Would execute and return an array of results of the following query:
+		// SELECT field1, field1 from mytable where field3 = 5;
+
+// ***如果你正在使用查询构造器缓存功能，连续两次调用 get_compiled_select() 方法
+// 并且不重置你的查询，这将会导致缓存被合并两次。举例来说，例如你正在缓存 select()
+// 方法，那么会查询两个相同的字段。
+
+/**************************************************
+ * 事务
+ * 		CodeIgniter 允许你在支持事务安全的表上使用事务。
+ * 		在 MySQL 中，你需要将 表的存储引擎设置为 InnoDb 或 BDB，
+ * 		而不是通常我们使用的 MyISAM 。大多数 其他数据库平台都原生支持事务。
+ */
+/******
+ * 运行事务
+ * 	要使用事务来运行你的查询，你可以使用 $this->db->trans_start()
+ * 	和 $this->db->trans_complete() 两个方法，像下面这样:
+ */
+// 在 start 和 complete 之间，你可以运行任意多个查询，
+// 根据查询执行 成功或失败，系统将自动提交或回滚。
+	$this->db->trans_start();
+	$this->db->query('AN SQL QUERY...');
+	$this->db->query('ANOTHER QUERY...');
+	$this->db->query('AND YET ANOTHER QUERY...');
+	$this->db->trans_complete();
+
+
+/******
+ * 严格模式 （Strict Mode）
+ */
+// CodeIgniter 默认使用严格模式运行所有的事务，在严格模式下，
+// 如果你正在 运行多组事务，只要有一组失败，所有组都会被回滚。
+// 如果禁用严格模式，那么 每一组都被视为独立的组，这意味着其
+// 中一组失败不会影响其他的组。
+
+	// 严格模式可以用下面的方法禁用:
+	$this->db->trans_strict(FALSE);
+	// 错误处理
+	// 如果你的数据库配置文件 config/database.php 中启用了错误报告（db_debug = TRUE），
+	//  当提交没有成功时，你会看到一条标准的错误信息。如果没有启用错误报告， 你可以像
+	//  下面这样来管理你的错误:
+		$this->db->trans_start();
+		$this->db->query('AN SQL QUERY...');
+		$this->db->query('ANOTHER QUERY...');
+		$this->db->trans_complete();
+
+		if ($this->db->trans_status() === FALSE)
+		{
+		    // generate an error... or use the log_message() function to log your error
+		}
+
+	// 禁用事务
+	// 如果你要禁用事务，可以使用 $this->db->trans_off() 方法来实现:
+		$this->db->trans_off();
+
+		$this->db->trans_start();
+		$this->db->query('AN SQL QUERY...');
+		$this->db->trans_complete();
+	// 当事务被禁用时，你的查询会自动提交，就跟没有使用事务一样，
+	// trans_start() 和 trans_complete() 等方法调用也将被忽略。
+
+/******
+ * 测试模式（Test Mode）
+ * 你可以选择性的将你的事务系统设置为 “测试模式”，这将导致
+ * 你的所有 查询都被回滚，就算查询成功执行也一样。要使用
+ * “测试模式”，你只需要 将 $this->db->trans_start() 函数的
+ * 第一个参数设置为 TRUE 即可
+ */
+	$this->db->trans_start(TRUE); // Query will be rolled back
+	$this->db->query('AN SQL QUERY...');
+	$this->db->trans_complete();
+
+/******
+ * 手工运行事务
+ */
+	$this->db->trans_begin();
+	$this->db->query('AN SQL QUERY...');
+	$this->db->query('ANOTHER QUERY...');
+	$this->db->query('AND YET ANOTHER QUERY...');
+
+	if ($this->db->trans_status() === FALSE)
+	{
+	    $this->db->trans_rollback();
+	}
+	else
+	{
+	    $this->db->trans_commit();
+	}
+// 手动运行事务时，请务必使用 $this->db->trans_begin() 方法，
+// 而不是 $this->db->trans_start() 方法。
+
+
+/******
+ * 数据库元数据
+ * 	表元数据
+ * 		列出数据库的所有表
+ */
+$this->db->list_tables();
+	// 该方法返回一个包含你当前连接的数据库的所有表名称的数组
+	$tables = $this->db->list_tables();
+	foreach ($tables as $table)
+	{
+	    echo $table;
+	}
+
+// 检测表是否存在
+$this->db->table_exists();
+	// 有时候，在对某个表执行操作之前先判断该表是否存在将是很有用的。 该函数返回一个布尔值：TRUE / FALSE
+	// 使用你要查找的表名替换掉 table_name
+	if ($this->db->table_exists('table_name'))
+	{
+	    // some code...
+	}
+
+/******
+ * 字段元数据
+ */
+// 列出表的所有列
+$this->db->list_fields()
+// 该方法返回一个包含字段名称的数组。有两种不同的调用方式：
+	// A 将表名称作为参数传入 $this->db->list_fields():
+		$fields = $this->db->list_fields('table_name');
+		foreach ($fields as $field)
+		{
+		    echo $field;
+		}
+	// B 你可以从任何查询结果对象上调用该方法，获取查询返回的所有字段
+		$query = $this->db->query('SELECT * FROM some_table');
+		foreach ($query->list_fields() as $field)
+		{
+		    echo $field;
+		}
+
+
+
+// 检测表中是否存在某字段
+$this->db->field_exists()
+	// 有时候，在执行一个操作之前先确定某个字段是否存在将会有很用。
+	// 该方法返回一个布尔值：TRUE / FALSE
+	if ($this->db->field_exists('field_name', 'table_name'))
+	{
+	    // some code...
+	}
+
+
+
+// 获取字段的元数据
+$this->db->field_data()
+	// 该方法返回一个包含了字段信息的对象数组。
+	$fields = $this->db->field_data('table_name');
+
+	foreach ($fields as $field)
+	{
+	    echo $field->name;
+	    echo $field->type;
+	    echo $field->max_length;
+	    echo $field->primary_key;
+	}
+
+// 如果你已经执行了一个查询，你也可以在查询结果对象上调用
+// 该方法获取 返回结果中的所有字段的元数据
+	$query = $this->db->query("YOUR QUERY");
+	$fields = $query->field_data();
+	/**
+	 * 如果你的数据库支持，该函数获取的字段信息将包括下面这些
+	 * 		name - 列名称
+	 * 		max_length - 列的最大长度
+	 * 		primary_key - 等于1的话表示此列是主键
+	 * 		type - 列的数据类型
+	 */
+
+/******
+ * 自定义函数调用
+ *  $this->db->call_function();
+ * 		这个方法用于执行一些 CodeIgniter 中没有定义的 PHP 数据库函数，而且 使用了一种平台独立的方式。
+ * 		举个例子，假设你要调用 mysql_get_client_info() 函数，这个函数 CodeIgniter 并不是原生支持的，
+ * 		你可以这样做:
+ */
+	$this->db->call_function('get_client_info');
+
+// 你必须提供一个不带 mysql_ 前缀的函数名来作为第一个参数，这个前缀 会根据当前所使用的
+// 数据库驱动自动添加。这让你可以在不同的数据库平台 执行相同的函数。但是很显然，并不是
+// 所有的数据库平台函数都是一样的， 所以就可移植性而言，它的作用非常有限
+// 任何你需要的其它参数都放在第一个参数后面:
+	$this->db->call_function('some_function', $param1, $param2, etc..);
+
+// 经常的，你会需要提供一个数据库的 connection ID 或是一个 result ID， connection ID
+// 可以这样来获得:
+	$this->db->conn_id;
+// result ID 可以从查询返回的结果对象获取，像这样:
+	$query = $this->db->query("SOME QUERY");
+	$query->result_id;
+
+/*********************
+ * 数据库缓存类
+ */
+***当缓存启用时，本类会被数据库驱动自动加载，切勿手动加载。
+***并非所有查询结果都能被缓存
+
+// 启用缓存
+/**
+ *   1 在服务器上创建一个可写的目录以便保存缓存文件；
+ *   2 通过文件 application/config/database.php 中的 cachedir 参数设置其目录路径；
+ *   3 通过将文件 application/config/database.php 中的 cache_on 参数设置为 TRUE，
+ *     也可以用下面的方法手动配置。
+ *   ***缓存一旦启用，每一次加载页面时，只要该页面含有数据库查询就会自动缓存起来。
+ */
+/**
+ * 缓存是如何工作的？
+ *
+ *
+ * 当你在访问页面时，CodeIgniter 的查询缓存系统会自动运行。如果缓存被启用， 当页面第一次加载时，
+ * 查询结果对象会被序列化并保存到服务器上的一个文本文件中。 当下次再访问该页面时，会直接使用缓存
+ * 文件而不用访问数据库了，这样， 在已缓存的页面，你的数据库访问会降为 0 。
+ *
+ * 只有读类型（SELECT）的查询可以被缓存，因为只有这类查询才会产生结果。 写类型的查询（INSERT、UPDATE
+ *  等）并不会生成结果，所以不会被缓存。
+ *
+ * 缓存文件永不过期，所有的查询只要缓存下来以后除非你删除它们否则将一直可用。你可以针对特定的页面来删
+ * 除缓存，或者也可以清空掉所有的缓存。一般来说， 你可以在某些事件发生时（如数据库中添加了数据）用下面
+ * 的函数来清除缓存。
+ */
+
+/**
+ * 缓存能够提升站点的性能吗？
+ *
+ *
+ * 缓存能否获得性能增益，取决于很多因素。如果你有一个低负荷而高度优化的 数据库，你可能不会
+ * 看到性能的提升。而如果你的数据库正在被大量访问， 您可能会看到缓存后的性有所提升，前提是
+ * 你的文件系统并没有太多的开销。 要记住一点的是，缓存只是简单的改变了数据获取的途径而已，
+ * 从访问数据库 变成了访问文件系统。
+ *
+ * 例如，在一些集群服务器环境中，由于文件系统的操作太过频繁，缓存其实是 有害的。在共享的
+ * 单一服务器环境中，缓存才可能有益。不幸的是，关于是否 需要缓存你的数据库这个问题并没有唯
+ * 一的答案，这完全取决于你的情况。
+ */
+
+/**
+ * 缓存文件是如何存储的？
+ *
+ * CodeIgniter 将每个查询都缓存到它单独的缓存文件中，根据调用的控制器方法 缓存文件被进
+ * 一步组织到各自的子目录中。更准确的说，子目录是使用你 URI 的前两段（控制器名 和 方法
+ * 名）命名的。
+ * 例如，你有一个 blog 控制器和一个 comments 方法，并含有三个不同的查询。 缓存系统将创建
+ * 一个名为 blog+comments 的目录，并在该目录下生成三个 缓存文件。
+ * 如果你的 URI 中含有动态查询时（例如使用分页时），每个查询实例都会 生成它单独的缓存
+ * 文件，因此，最终可能会出现缓存文件数是你页面中的 查询次数的好几倍这样的情况。
+ */
+
+/**
+ * 管理你的缓存文件
+ *
+ * 由于缓存文件不会过期，那么你的应用程序中应该有删除缓存的机制， 例如，我们假设你
+ * 有一个博客并允许用户评论，每当提交一个新评论时， 你都应该删除掉关于显示评论的那
+ * 个控制器方法对应的缓存文件。下面将介绍 有两种不同的方法用来删除缓存数据。
+ *
+ */
+
+/**
+ * 不是所有的数据库方法都兼容缓存
+ *
+ * 最后，我们必须得指出被缓存的结果对象只是一个简化版的结果对象， 正因为这样，有几个查询结果的
+ * 方法无法使用。
+ * 下面列出的方法是无法在缓存的结果对象上使用的：
+ * 	num_fields()
+ * 	field_names()
+ * 	field_data()
+ * 	free_result()
+ *  同时，result_id 和 conn_id 这两个 id 也无法使用，因为这两个 id 只适用于实时的数据库操作
+ */
+
+/**
+ * 函数参考
+ *  $this->db->cache_on() / $this->db->cache_off()
+ *
+ * 用于手工启用/禁用缓存，当你不想缓存某些查询时，这两个方法会很有用
+ *
+ *
+ */
+		 // Turn caching on
+		$this->db->cache_on();
+		$query = $this->db->query("SELECT * FROM mytable");
+
+		// Turn caching off for this one query
+		$this->db->cache_off();
+		$query = $this->db->query("SELECT * FROM members WHERE member_id = '$current_user'");
+
+		// Turn caching back on
+		$this->db->cache_on();
+		$query = $this->db->query("SELECT * FROM another_table");
+
+$this->db->cache_delete()
+/**
+ * 删除特定页面的缓存文件，这当你更新你的数据库之后需要清除缓存时很有用
+ * 缓存系统根据你访问页面的 URI 来将缓存写入到相应的缓存文件中去，例如，
+ * 如果你在访问 example.com/index.php/blog/comments 这个页面，缓存系统
+ * 会将缓存文件保存到 blog+comments 目录下，要删除这些缓存文件，你可以使用:
+ */
+		$this->db->cache_delete('blog', 'comments');
+		//如果你没提供任何参数，将会清除当前 URI 对应的缓存文件。
+
+$this->db->cache_delete_all()
+	// 清除所有的缓存文件
+	$this->db->cache_delete_all();
+
+/**********************************************
+ * 数据库工厂类
+ *
+ * 		数据库工厂类提供了一些方法来帮助你管理你的数据库
+ */
+***由于数据库工厂类依赖于数据库驱动器，为了初始化该类，你的数据库驱动器必须已经运行
+// 加载数据库工厂类的代码如下:
+	$this->load->dbforge();
