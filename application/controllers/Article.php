@@ -12,8 +12,9 @@ class Article extends CI_Controller {
 	public function index()
 	{
 		$id = $this->input->get('id');
-		$article = $this->Article_model->getArticle($id);
-		// print_r($article);
+		// $article = $this->Article_model->getArticle($id);
+		$article = $this->Article_model->tArticle($id);
+		print_r($article);exit;
 		$this->load->view('home',$article);
 	}
 

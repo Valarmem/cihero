@@ -69,7 +69,6 @@ class Article_model extends CI_Model
 
 		$phpWriter = IOFactory::createWriter($phpExcel,'Excel5');
 
-		// var_dump($phpWriter);
 		// 下载文件
 		header('Content-Type: application/vnd.ms-excel');
 		header('Content-Disposition: attachment;filename="Article_'.date('dMy').'.xls');
@@ -79,5 +78,14 @@ class Article_model extends CI_Model
 		exit;
 	}
 
+	public function tArticle() {
+		// $this->db->select('*');
+		// $this->db->from('articles');
+
+		// $query = $this->db->query('SELECT * FROM articles');
+		// $data = $this->db->field_data('articles');
+		$data = $this->db->list_fields('articles');
+		var_dump($data);
+	}
 
 }
