@@ -9,21 +9,72 @@ class Article_model extends CI_Model
 		$this->load->database();
 	}
 
-	public function getArticle($id)
+	public function index()
+	{
+		return $this->load->view();
+	}
+
+	public function getArticles()
 	{
 		$this->db->select('*');
 		$this->db->from('articles');
-		$this->db->where('id',$id);
-
-		// $result = $this->db->get()->result_array();
-		$result = $this->db->get()->row_array();
+		$result = $this->db->get()->result_array();
 		return $result;
+	}
+
+	public function getArticleByid($id) {
+		return $this->db->from('articles')->where('id',$id)->get()->row_array();
+	}
+
+	public function createArticles($data)
+	{
+		$info = [
+			'title'		  => $data['title'],
+			'content'	  => $data['content'],
+			'user_id'	  => $data['user_id'],
+			'category_id' => $data['category_id'],
+			];
+		return $this->db->insert('articles',$data);
+
+	}
+
+	public function editArticle($data)
+	{
+		$info = [
+			'id'		  => $data['id'],
+			'title'		  => $data['title'],
+			'content'	  => $data['content'],
+			'user_id'	  => $data['user_id'],
+			'category_id' => $data['category_id'],
+		];
+		$this->db->update('articles', $info, "id = ".$info['id']);
+		// UPDATE `articles` SET `id` = '12', `title` = 'test', `content` = 'testsfdfdfs是滴是滴', `user_id` = 6, `category_id` = '12' WHERE `id` = 12
+		// $this->db->replace('articles',$info);
+		// REPLACE INTO `articles` (`id`, `title`, `content`, `user_id`, `category_id`) VALUES ('12', 'test', 'testsfdfdfs是滴是滴', 4, '12')
+		print_r($this->db->last_query());
+		// return $this->db->update('articles', $info, "id = ".$info['id']);
+		// return $this->db->replace('articles',$info);
+	}
+
+
+	public function delArticle($id)
+	{
+		return $this->db->where('id',$id)->delete('articles');
+	}
+
+	public function emptyAll() {
+		$this->db->empty_table('articles'); // Produces: DELETE FROM mytable
+
+		// $this->db->from('mytable');
+		// $this->db->truncate();
+
+		// // or
+
+		// $this->db->truncate('mytable');
 	}
 
 	public function exportArticle($id)
 	{
-
-
 		$this->db->select('*');
 		$this->db->from('articles');
 		$this->db->where('id',$id);
@@ -78,24 +129,6 @@ class Article_model extends CI_Model
 		exit;
 	}
 
-	public function tArticle() {
-		// $this->db->select('*');
-		$tables = $this->db->field_data('articles');;
 
-		// $query = $this->db->query('SELECT * FROM articles');
-		// $data = $this->db->field_data('articles');
-		// $data = $this->db->list_fields('articles');
-		/*$this->db->start_cache();
-		$this->db->select('title,content');
-		$this->db->stop_cache();
-		$articles = $this->db->get('articles')->result_array();*/
-
-
-		var_dump($tables);
-
-		// return $articles;
-		//Generates: SELECT `field1` FROM (`tablename`)
-
-	}
 
 }

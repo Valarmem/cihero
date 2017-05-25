@@ -1,0 +1,194 @@
+<?php
+// 更新
+$this->db->update('articles', $info, "id = ".$info['id']);
+	UPDATE `articles` SET `id` = '12', `title` = 'test', `content` = 'testsfdfdfs是滴是滴',
+		 `user_id` = 6, `category_id` = '12' WHERE `id` = 12
+
+
+$this->db->replace('articles',$info);
+	REPLACE INTO `articles` (`id`, `title`, `content`, `user_id`, `category_id`)
+		VALUES ('12', 'test', 'testsfdfdfs是滴是滴', 4, '12')
+// REPLACE 语句根据表的**主键**和**唯一索引** 来执行
+
+$res['result'] = $this->db->update('score', $data, array('score>' => $full_credit,'subject'=>$subject));
+	UPDATE `score` SET `score` = 100 WHERE `score` > 100 AND `subject` = 'math'
+
+$this->db->set() // 该方法用于设置新增或更新的数据
+$this->db->set('subject', $subject);
+$sql = $this->db->insert('score');
+	INSERT INTO `score` (`subject`) VALUES ('Just YOU')
+
+$this->db->set($array);
+$sql = $this->db->insert('user');
+	INSERT INTO `user` (`username`, `email`, `password`) VALUES ('jeiRd', 'Q76qQ@qq.com', '64aAGNKgVG')
+
+
+$this->db->set('username', 'jack');
+$this->db->set('email', 'jack@qq.com');
+$this->db->set('password', 'ajsifojiofajsdos');
+$sql = $this->db->insert('user');
+	INSERT INTO `user` (`username`, `email`, `password`) VALUES ('jack', 'jack@qq.com', 'ajsifojiofajsdos')
+
+$sql = $this->db->insert_batch('user',$array);
+	INSERT INTO `user` (`email`, `password`, `username`) VALUES ('Q76qQ0@qq.com','Rj77gxKC8A','jeiRd0'), ('Q76qQ1@qq.com','Bxa742yuXC','jeiRd1'), ('Q76qQ2@qq.com','V7TQj9u9tQ','jeiRd2'), ('Q76qQ3@qq.com','cJ990WRT8G','jeiRd3'), ('Q76qQ4@qq.com','7Nh18N4Vv9','jeiRd4'), ('Q76qQ5@qq.com','Qoxynql0Lq','jeiRd5'), ('Q76qQ6@qq.com','5YA6T07zt1','jeiRd6'), ('Q76qQ7@qq.com','JHIpvo7uV2','jeiRd7'), ('Q76qQ8@qq.com','sSVA65iaLq','jeiRd8'), ('Q76qQ9@qq.com','kwZ1H9cI6d','jeiRd9')
+
+$this->db->set('field', 'field+1', FALSE);
+$this->db->where('id', 2);
+$this->db->update('mytable'); // gives UPDATE mytable SET field = field+1 WHERE id = 2
+
+$this->db->set('field', 'field+1');
+$this->db->where('id', 2);
+$this->db->update('mytable'); // gives UPDATE `mytable` SET `field` = 'field+1' WHERE `id` = 2
+
+
+
+
+
+$sql = $this->db->update_batch('user',$array,'username');
+	// 第一个参数为要更新的表名，第二个参数为要更新的数据，是个二维数组，第三个 参数是 WHERE 语句的键(必须唯一)
+	// Duplicate entry 'jeiRd1-66Y8Va@qq.com' for key 'username'
+	UPDATE `user` SET `email` =
+	CASE
+		WHEN `username` = 'jeiRd0' THEN 'A2PWE7@qq.com'
+		WHEN `username` = 'jeiRd1' THEN 'FfUFAx@qq.com'
+		WHEN `username` = 'jeiRd2' THEN '86ErTd@qq.com'
+	ELSE `email` END, `password` =
+	CASE WHEN `username` = 'jeiRd0' THEN 'sqmCnE679z'
+		 WHEN `username` = 'jeiRd1' THEN '6Z067yyf57'
+		 WHEN `username` = 'jeiRd2' THEN 'hEzF9k2Ep7'
+	ELSE `password` END
+		 WHERE `username` IN('jeiRd0','jeiRd1','jeiRd2')
+
+
+
+
+
+
+$this->db->truncate('user');
+	TRUNCATE `user`
+
+$sql = $this->db->empty_table('user');
+	DELETE FROM `user`
+
+$tables = array('user', 'score');
+	$this->db->where('id', '1');
+	$this->db->delete($tables);
+
+
+
+
+$this->db->get_compiled_delete()
+
+$sql = $this->db->limit(10,20)->get('user')->result_array();
+	SELECT * FROM `user` LIMIT 20, 10
+
+echo $this->db->count_all_results('my_table');
+	SELECT COUNT(*) AS `numrows` FROM `user`
+
+
+
+
+
+
+
+// 类参考
+$this->load->library('email');
+// 加载完之后，email 类就可以使用 $this->email 来访问使用了
+// 类库文件可以被保存到主 libraries 目录的子目录下面，或者保存到个人的 application/libraries 目录下
+	libraries/flavors/Chocolate.php
+	$this->load->library('flavors/chocolate');
+
+// 可以同时加载多个类，只需给 library 方法传入一个包含所有要载入的类名的数组
+	$this->load->library(array('email', 'table'));
+
+// 设置选项
+// 第二个参数是可选的，用于选择性地传递配置参数。一般来说，你可以将参数以数组的形式传递过去
+	$config = array (
+	    'mailtype' => 'html',
+	    'charset'  => 'utf-8',
+	    'priority' => '1'
+	);
+
+	$this->load->library('email', $config);
+
+// 第三个参数也是可选的，如果为空，类库通常就会被赋值给一个与类库同名的对象
+	$this->load->library('calendar', NULL, 'my_calendar');
+	// Calendar class is now accessed using:
+	$this->my_calendar
+
+
+
+
+	$sql = $this->db->like('username', 'jack')->get('user')->result_array();
+		SELECT * FROM `user` WHERE `username` LIKE '%jack%' ESCAPE '!'
+
+// 可以传入第三个可选的参数来控制 LIKE 通配符（%）的位置，可用选项有：'before'，'after' 和 'both' (默认为 'both')
+	$sql = $this->db->like('username', 'jack','before')->get('user')->result_array();
+		SELECT * FROM `user` WHERE `username` LIKE '%jack' ESCAPE '!'
+
+// 关联数组方式
+	$data=array('username'=>'jack',	'email'=>'qq' );
+	$sql = $this->db->like($data)->get('user')->result_array();
+		SELECT * FROM `user` WHERE `username` LIKE '%jack%' ESCAPE '!' AND `email` LIKE '%qq%' ESCAPE '!'
+
+	$sql = $this->db->like('username','jack')->or_like('email','qq')->get('user')->result_array();
+		SELECT * FROM `user` WHERE `username` LIKE '%jack%' ESCAPE '!' OR `email` LIKE '%qq%' ESCAPE '!'
+
+
+
+
+
+
+
+
+	$sql = $this->db->select('username')->distinct()->select('email')->get('user')->result_array();
+		SELECT DISTINCT `username`, `email` FROM `user`
+
+
+
+
+
+
+// 加载辅助函数
+$this->load->helper('array');
+
+element($item, $array[, $default = NULL])
+	$array = array(
+	    'color' => 'red',
+	    'shape' => 'round',
+	    'size'  => ''
+	);
+
+	echo element('color', $array); // returns "red"
+	echo element('size', $array, 'foobar'); // returns "foobar"
+
+elements($items, $array[, $default = NULL])
+
+	// 当你需要将 $_POST 数组传递到你的模型中时这将很有用，这可以防止用户发送额外的数据 被写入到你的数据库
+	$this->load->model('post_model');
+	$this->post_model->update(
+	    elements(array('id', 'title', 'content'), $_POST)
+	);
+
+ random_element($array)
+	 $quotes = array(
+	    "I find that the harder I work, the more luck I seem to have. - Thomas Jefferson",
+	    "Don't stay in bed, unless you can make money in bed. - George Burns",
+	    "We didn't lose the game; we just ran out of time. - Vince Lombardi",
+	    "If everything seems under control, you're not going fast enough. - Mario Andretti",
+	    "Reality is merely an illusion, albeit a very persistent one. - Albert Einstein",
+	    "Chance favors the prepared mind - Louis Pasteur"
+	);
+	echo random_element($quotes);
+
+$this->load->helper('url');
+
+
+echo site_url('news/local/123');
+// http://example.com/index.php/news/local/123
+$segments = array('news', 'local', '123');
+echo site_url($segments);
+
+base_url($uri = '', $protocol = NULL)
+// 跟 site_url() 函数不一样的是，你可以指定一个文件路径（例如图片或样式文件），这将很有用，例如:
+echo base_url("images/icons/edit.png");
