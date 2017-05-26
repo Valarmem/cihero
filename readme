@@ -192,3 +192,27 @@ echo site_url($segments);
 base_url($uri = '', $protocol = NULL)
 // 跟 site_url() 函数不一样的是，你可以指定一个文件路径（例如图片或样式文件），这将很有用，例如:
 echo base_url("images/icons/edit.png");
+
+
+
+
+// 连接到多个数据库
+$DB1 = $this->load->database('group_one', TRUE);
+$DB2 = $this->load->database('group_two', TRUE);
+
+// 如果你只是需要切换到同一个连接的另一个不同的数据库，你没必要创建 独立的数据库配置，你可以像下面这样切换到另一个数据库：
+$this->db->db_select($database2_name);
+
+// 手动关闭连接
+$this->db->close();
+
+
+// 指定数据库前缀
+$this->db->dbprefix('tablename'); // outputs prefix_tablename
+// 修改这个前缀，而又不希望创建一个新的数据库连接
+$this->db->set_dbprefix('newprefix');
+$this->db->dbprefix('tablename'); // outputs newprefix_tablename
+
+
+// 查询  结果辅助方法
+// num_rows() 方法

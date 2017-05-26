@@ -67,12 +67,11 @@ class Score_model extends CI_Model {
 	}
 
 	public function set() {
-		$data=array('username'=>'jack',	'email'=>'qq' );
-		$sql = $this->db->select('username')->distinct()->select('email')->get('user')->result_array();
+		$sql = $this->db->select('username')->distinct()->select('email')->get('user')->num_rows();
 
 		// $sql = $this->db->count_all_results('user');
 
-		$array = $this->generateArray(80);
+		// $array = $this->generateArray(80);
 		// $sql = $this->db->insert_batch('user',$array);
 
 		// $sql = $this->db->truncate('user');
