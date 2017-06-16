@@ -216,3 +216,16 @@ $this->db->dbprefix('tablename'); // outputs newprefix_tablename
 
 // 查询  结果辅助方法
 // num_rows() 方法
+
+
+//	引用传值
+
+//	basename/dirname
+
+//	类/对象函数
+//	get_class_methods
+//	get_object_vars
+//	get_class_vars
+//	get_class
+
+//	Reflection 类
