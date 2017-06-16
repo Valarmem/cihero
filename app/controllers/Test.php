@@ -16,14 +16,13 @@ class Test extends CI_Controller {
 		$offset = $page == false?0:($per_page * ($page - 1)); // 计算偏移量
 
 
-		$this->db->select('det_title,det_descript');
+		$this->db->select('*');
 		$this->db->from($table);
 		$this->db->where('det_title != ""');
 
 		$total = $this->db->count_all_results('', false);
 		$this->db->limit($per_page,$offset);
 		$list = $this->db->get()->result_array();
-		// echo $total;
 
 		$config['use_page_numbers'] = TRUE;
 		$config['base_url'] = 'http://yx.ci.com/index.php/test/test/';
@@ -41,14 +40,13 @@ class Test extends CI_Controller {
 
 	public function test1() {
 		$per_page = 10;
-		$table = 'zhuanti_detail';
+		$table = 'articles';
 		$page = $this->uri->segment(3);
 		$offset = $page == false?0:($per_page * ($page - 1)); // 计算偏移量
 
 
-		$this->db->select('det_title,det_descript');
+		$this->db->select('*');
 		$this->db->from($table);
-		$this->db->where('det_title != ""');
 
 		$total = $this->db->count_all_results('', false);
 		$this->db->limit($per_page,$offset);
@@ -70,12 +68,13 @@ class Test extends CI_Controller {
 
 	public function putjson() {
 		$per_page = 5;
-		$table = 'zhuanti_detail';
+		$table = 'articles';
 		$page = $_GET['page'];
 		$offset = $page == false?0:($per_page * ($page - 1)); // 计算偏移量
-		$this->db->select('det_title,det_descript');
+		// $this->db->select('det_title,det_descript');
+		$this->db->select('*');
 		$this->db->from($table);
-		$this->db->where('det_title != ""');
+		// $this->db->where('det_title != ""');
 
 		$total = $this->db->count_all_results('', false);
 		$this->db->limit($per_page,$offset);

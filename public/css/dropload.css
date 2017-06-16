@@ -9,6 +9,8 @@
 }
 .dropload-down{
     height: 50px;
+    font-size: 32px;
+    color: #999;
 }
 .dropload-refresh,.dropload-update,.dropload-load,.dropload-noData{
     height: 50px;

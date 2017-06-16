@@ -94,7 +94,7 @@
                 }
                 fnAutoLoad(me);
             },150);
-            
+
         });
 
         // 绑定触摸
@@ -164,7 +164,7 @@
                 me.$element.prepend('<div class="'+me.opts.domUp.domClass+'"></div>');
                 me.upInsertDOM = true;
             }
-            
+
             fnTransition(me.$domUp,0);
 
             // 下拉
