@@ -12,6 +12,14 @@
   <title>《今日头条》你关心的,才是头条! - TouTiao.com</title>
   <link rel="stylesheet" type="text/css" href="<?=base_url()?>public/css/wap.css" />
   <link rel="stylesheet" type="text/css" href="<?=base_url()?>public/css/search.css" />
+  <style type="text/css">
+   .dropload-down {
+    background-color: #fff;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+  }
+  </style>
  </head>
  <body class="android">
   <div class="backdrop" ontouchstart="chooseAction(); return false" ontouchmove="return false"></div>
@@ -34,6 +42,7 @@
   </form>
   <content id="search">
    <div class="list_content">
+    <div class="lists"></div>
     <section class="">
      <a href="<?=base_url()?>News/article" class="article_link clearfix" onclick="actionLog('click_search','6431010197615771906', null, {item_id:'6431146267044217345'})"><h3 class="line3">
        <highlight>
@@ -92,7 +101,7 @@
       </div></a>
      <div class="line"></div>
     </section>
-    <section class="middle_mode">
+    <!-- <section class="middle_mode">
      <a href="/group/6431448997151473922/" class="article_link clearfix" onclick="actionLog('click_search','6431448997151473922', null, {item_id:'6431451792172646913'})">
       <div class="list_img_holder" style="background: none;">
        <img src="http://p3.pstatp.com/list/27da0008d3aa34ae2469" />
@@ -111,35 +120,62 @@
        </div>
       </div></a>
      <div class="line"></div>
-    </section>
-    <section class="middle_mode">
-     <a href="/group/6431029192628601090/" class="article_link clearfix" onclick="actionLog('click_search','6431029192628601090', null, {item_id:'6431289481449439745'})">
-      <div class="list_img_holder" style="background: none;">
-       <img src="http://p1.pstatp.com/list/26f100037603114a585a" />
-      </div>
-      <div class="vertical-middle text-wrap">
-       <h3 class="line3">空乘专业女生拍“
-        <highlight>
-         大肚
-        </highlight>”
-        <highlight>
-         毕业照
-        </highlight>走红网络</h3>
-       <div class="item_info">
-        <span class="src  space">山东新润律师事务所</span>
-        <span>评论195</span>
-        <span class="time fr" title="2017-06-14 08:47">1天前</span>
-       </div>
-      </div></a>
-     <div class="line"></div>
-    </section>
-   </div>
-   <div class="list_bottom" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
-    <section class="loadmoretip">
-     <a href="#" old-text="" class="loading">加载中...</a>
-    </section>
+    </section> -->
    </div>
   </content>
+<script src="<?=base_url()?>public/js/jquery-3.2.1.min.js"></script>
+<script src="<?=base_url()?>public/js/dropload.min.js"></script>
+<script>
+$(function(){
+    // 页数
+    var page = 0;
+    // 每页展示5个
+    var size = 5;
 
+    // dropload
+    $('.list_content').dropload({
+        scrollArea : window,
+        loadDownFn : function(me){
+            page++;
+            // 拼接HTML
+            var result = '';
+            $.ajax({
+                type: 'GET',
+                // url: 'http://ons.me/tools/dropload/json.php?page='+page+'&size='+size,
+                url: '<?=base_url()?>/News/putjson?page='+page,
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                    var arrLen = data.length;
+                    if(arrLen > 0){
+                        for(var i=0; i<arrLen; i++){
+                            result += '<section class="middle_mode"><a href="/group/6431708236760105217/" class="article_link clearfix" onclick="actionLog(\'click_search\',\'6431708236760105217\', null, {item_id:\'6431710023688126978\'})"><div class="list_img_holder" style="background: none;"><img src="http://p3.pstatp.com/list/26f20003bb2d8e557d0c" /></div><div class="vertical-middle text-wrap"><h3 class="line3"><highlight>空姐</highlight>准妈妈挺      <highlight>大肚</highlight>拍<highlight>毕业照</highlight>？网友的评论亮了！</h3><div class="item_info"><span class="src  space">流行娱乐先锋</span><span>评论350</span><span class="time fr" title="2017-06-15 11:59">1小时前</span></div></div></a><div class="line"></div></section>';
+
+                        }
+                    // 如果没有数据
+                    }else{
+                        // 锁定
+                        me.lock();
+                        // 无数据
+                        me.noData();
+                    }
+                    // 为了测试，延迟1秒加载
+                    setTimeout(function(){
+                        // 插入数据到页面，放到最后面
+                        $('.lists').append(result);
+                        // 每次数据插入，必须重置
+                        me.resetload();
+                    },800);
+                },
+                /*error: function(xhr, type){
+                    alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                    me.resetload();
+                }*/
+            });
+        }
+    });
+});
+</script>
  </body>
 </html>

@@ -47,8 +47,8 @@ class News extends CI_Controller
 
 	public function putjson() {
 		$per_page = 5;
-		// $table = 'articles';
-		$table = 'zhuanti_detail';
+		$table = 'articles';
+		// $table = 'zhuanti_detail';
 		$page = $_GET['page'];
 		$offset = $page == false?0:($per_page * ($page - 1)); // 计算偏移量
 		// $this->db->select('det_title,det_descript');
