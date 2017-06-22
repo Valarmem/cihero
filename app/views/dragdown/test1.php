@@ -126,8 +126,8 @@ $(function(){
             var result = '';
             $.ajax({
                 type: 'GET',
-                // url: 'http://ons.me/tools/dropload/json.php?page='+page+'&size='+size,
-                url: '<?=base_url()?>/test/putjson?page='+page,
+                url: 'http://ons.me/tools/dropload/json.php?page='+page+'&size='+size,
+                // url: '<?=base_url()?>/test/putjson?page='+page,
                 dataType: 'json',
                 success: function(data){
                     console.log(data);
@@ -156,7 +156,7 @@ $(function(){
                     },1000);
                 },
                 error: function(xhr, type){
-                    alert('Ajax error!');
+                    // alert('Ajax error!');
                     // 即使加载出错，也得重置
                     me.resetload();
                 }

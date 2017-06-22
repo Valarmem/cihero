@@ -1,196 +1,225 @@
+
 <!DOCTYPE html>
-<html data-dpr="1" style="font-size: 34.8px;">
+<html>
+<head>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
 
-  <head>
-    <meta charset="utf-8">
-    <title>直击：中国最富有城市，比瑞士还富裕，美女云云-今日头条</title>
-    <link rel="canonical" href="http://www.toutiao.com/i6416256402326553089">
-    <meta charset="utf-8">
-    <link rel="apple-touch-icon-precomposed" href="//s3a.pstatp.com/image/toutiao_mobile/icon_180_1.png">
-    <link rel="shortcut icon" href="//s3b.pstatp.com/image/toutiao_mobile/short_cut_icon_1.png" type="image/x-icon">
+   <!--  <meta name="shenma-site-verification" content="34c05607e2a9430ad4249ed48faaf7cb_1432711730">
+    <meta name="baidu_union_verify" content="b88dd3920f970845bad8ad9f90d687f7">
+    <meta name="domain_verify" content="pmrgi33nmfuw4ir2ej2g65lunfqw6ltdn5wselbcm52wszbchirdqyztge3tenrsgq3dknjume2tayrvmqytemlfmiydimddgu4gcnzcfqrhi2lnmvjwc5tfei5dcnbwhazdcobuhe2dqobrpu"> -->
+
+  <link rel="alternate" media="only screen and (max-width: 640px)" href="//m.toutiao.com/a6425851846769787138/" >
+
+  <title>都说瑞士银行是世界上最安全的银行，你知道为什么吗？ - 今日头条(www.toutiao.com)</title>
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta name="keywords" content="">
+  <meta name="description" content="瑞士是欧洲最富有的国家，也是全球最富有的国家之一。在瑞士有两大东西其它国家难以匹敌，一是钟表，二是银行。2004年年底，瑞士人均金融资产超过165000欧元，在岸(onshore)">
+  <meta name="pathname" content="toutiao_pc_article_detail">
+
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="《今日头条》(TouTiao.com)是一款会自动学习的资讯软件,它会聪明地分析你的兴趣爱好,自动为你推荐喜欢的内容,并且越用越懂你.你关心的,才是头条!">
-    <meta name="keywords" content="头条,头条网,今日头条">
-    <meta name="pathname" content="usergrowth_mobile_detail">
-    <link rel="stylesheet" href="<?=base_url()?>public/css/article.css">
-    <style type="text/css">
-      .head_title {
-        position: relative;
-        width: 100%;
-        text-align: center;
-        font-size: 20px;
-        color: #fff;
-        font-weight: 700;
-        line-height: 44px;
-        display: inline-block;
-      }
-      .refresh_btn {
-        background: url(//s3a.pstatp.com/growth/mobile_list/image/titlebar_refresh_small@3x_96fb31e43870246a450c5812493204bd.png) no-repeat 50%;
-        background-size: 14px;
-        width: 19px;
-        height: 51px;
-        display: inline-block;
-      }
-      .search-btn {
-        background: url(//s3.pstatp.com/growth/mobile_list/image/feed_ic_search_normal@3x_0f198e566fac66cbb016bc72f15d4f39.png) no-repeat 50%;
-        background-size: 22px;
-        width: 50px;
-        height: 51px;
-        display: inline-block;
-      }
-      .top-bar {
-        position: absolute;
-        width: 100%;
-        height: 44px;
-        background: #D43D3D;
-        text-align: center;
-        color: #fff;
-      }
-      .abs_r {
-        position: absolute;
-        right: 0;
-        z-index: 100;
-      }
-      .abs_m {
-        position: absolute;
-        height: 40px;
-        width: 100%;
-        text-align: center;
-      }
-      .article-info {
-        font-size: 16px;
-        line-height: 16px;
-        display: inline-block;
-        vertical-align: middle;
-        color: #999;
-      }
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-  </head>
+    <link rel="shortcut icon" href="//s3a.pstatp.com/toutiao/resource/ntoutiao_web/static/image/favicon_8e9c9c7.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<?=site_url()?>public/css/layout_5fcc025.css">
 
-  <body style="font-size: 12px;">
-    <div id="main">
-      <div data-reactroot="" class="wap-container">
-        <div class="news-banner-container-new-article banner-top">
-          <div class="pannel-top show-top-pannel top-bar">
-            <div class="abs_m">
-              <a href="#" class="head_title">今日头条</a>
-            </div>
-            <div class="abs_r">
-              <a href="search" class="search-btn"></a>
-            </div>
-          </div>
-        </div>
-        <article class="article padding-side bottom-line">
-          <div class="article__header">
-            <h1 class="article__title">直击：中国最富有城市，比瑞士还富裕，美女云云</h1>
-            <div class="article__author article__author--pgc">
-              <div class="article-info">
-                  今日头条  2017-05-04 20:31
-              </div>
-          </div>
-          <div class="article__content" style="height: auto;">
-            <blockquote>今天爸爸给我打电话：宝贝啊，你最近怎么不跟我女婿吵架了？我：怎么了？他最近表现很好。爸爸：我想下棋，你们赶紧吵一架让他过来陪我。</blockquote>
-            <p>
-              曾经和女友分手后，离开伤心地，换到城市另一个角落，租房生活，一天早上，突然有人敲门，揉揉眼睛一看“宝贝，你果然还是舍不得我的！你是怎么找到这的，废了不少心思吧！” 女友也是一脸惊讶“怎么是你呀！我男朋友让我过来收房租的！！！” 卧槽！！！
-            </p>
-            <p>今天爸爸给我打电话：宝贝啊，你最近怎么不跟我女婿吵架了？我：怎么了？他最近表现很好。爸爸：我想下棋，你们赶紧吵一架让他过来陪我。</p>
-            <p class="img-wrapper-embedded" style="width: 100%; min-height: 176.625px;">
-              <img src="https://p3.pstatp.com/large/1dc10003b9c2acaefa52" img_width="1200" img_height="675" inline="0" alt="直击：中国最富有城市，比瑞士还富裕，美女云云" onerror="javascript:errorimg.call(this);" data-index="0"></p>
-            <p>澳门是中国人均GDP收入最高的城市，虽只有32.8平方公里和60万人口，但人均GDP是排名世界前十的城市，连老牌发达国家瑞士都排名其后。</p>
-            <p class="img-wrapper-embedded" style="width: 100%; min-height: 209.333px;">
-              <img src="https://p3.pstatp.com/large/1dc40003ce6f3f94c685" img_width="1800" img_height="1200" inline="0" alt="直击：中国最富有城市，比瑞士还富裕，美女云云" onerror="javascript:errorimg.call(this);" data-index="1"></p>
-            <p>澳门是全球最发达、最富裕地区之一，因为它是世界四大赌城之一，实行资本主义制度，其旅游业、、酒店业和娱乐场所使澳门成为中国最富裕的城市。</p>
-            <p class="img-wrapper-embedded" style="width: 100%; min-height: 199.01px;">
-              <img src="https://p3.pstatp.com/large/1dbe0006a1e0e2fe968b" img_width="1024" img_height="649" inline="0" alt="直击：中国最富有城市，比瑞士还富裕，美女云云" onerror="javascript:errorimg.call(this);" data-index="2"></p>
-            <p>以2015年国际汇率计算，澳门2015年人均GDP达到7.8586万美元，换算人民币为55万元，根据2015年世界人均GDP排行，澳门排在卢森堡、挪威、卡塔尔之后，名列第四（2015年计）。</p>
-            <p class="img-wrapper-embedded" style="width: 100%; min-height: 202.53px;">
-              <img src="https://p3.pstatp.com/large/1dc80003c7b588eb98f3" img_width="600" img_height="387" inline="0" alt="直击：中国最富有城市，比瑞士还富裕，美女云云" onerror="javascript:errorimg.call(this);" data-index="3"></p>
-            <p>澳门赌博业非常发达，赌博业收入占GDP收入的一半左右。</p>
-            <p class="img-wrapper-embedded" style="width: 100%; min-height: 235.5px;">
-              <img src="https://p3.pstatp.com/large/1dc10003b9dae2a6e045" img_width="1024" img_height="768" inline="0" alt="直击：中国最富有城市，比瑞士还富裕，美女云云" onerror="javascript:errorimg.call(this);" data-index="4"></p>
-            <p>酒店业、娱乐业吸引着大量的游客前往澳门进行潇洒。</p>
-            <p class="img-wrapper-embedded" style="width: 100%; min-height: 208.893px;">
-              <img src="https://p3.pstatp.com/large/1dc40003d5a8b9d798a2" img_width="950" img_height="632" inline="0" alt="直击：中国最富有城市，比瑞士还富裕，美女云云" onerror="javascript:errorimg.call(this);" data-index="5"></p>
-            <p>澳门主要以纺织业和赌博业为主。</p>
-            <p class="img-wrapper-embedded" style="width: 100%; min-height: 209.333px;">
-              <img src="https://p3.pstatp.com/large/1dc500069c2947010223" img_width="1200" img_height="800" inline="0" alt="直击：中国最富有城市，比瑞士还富裕，美女云云" onerror="javascript:errorimg.call(this);" data-index="6"></p>
-            <p>图为去澳门旅游的游客。</p>
-            <p class="img-wrapper-embedded" style="width: 100%; min-height: 236.351px;">
-              <img src="https://p3.pstatp.com/large/1dc40003ce9435dc2ace" img_width="2305" img_height="1735" inline="0" alt="直击：中国最富有城市，比瑞士还富裕，美女云云" onerror="javascript:errorimg.call(this);" data-index="7"></p>
-            <p>图为澳门一隅。</p>
-            <p class="img-wrapper-embedded" style="width: 100%; min-height: 209.285px;">
-              <img src="https://p3.pstatp.com/large/1dbe0006a2152df9b7b8" img_width="2180" img_height="1453" inline="0" alt="直击：中国最富有城市，比瑞士还富裕，美女云云" onerror="javascript:errorimg.call(this);" data-index="8"></p>
-            <p>图为澳门一隅。</p>
-            <p class="img-wrapper-embedded" style="width: 100%; min-height: 209.223px;">
-              <img src="https://p3.pstatp.com/large/1dca0006ad17854880e3" img_width="950" img_height="633" inline="0" alt="直击：中国最富有城市，比瑞士还富裕，美女云云" onerror="javascript:errorimg.call(this);" data-index="9"></p>
-            <p>图为澳门宝贝，当地的美女也十分的多，特别是赌场和车展，外国的本地的都来澳门发展（本文数据来源于网络）。</p>
-          </div>
-        </article>
-        <div>
-          <div class="recommendation-container-new-article">
-            <div class="recommendation-item">
-              <h2 class="container__header">热门推荐</h2>
-              <div>
-                <div class="feed-list-container-new-article appOnly-container">
-                  <div class="list-content">
-                    <section data-group-id="6420561874140233985" class="feed-list appOnly app_special">
-                      <a href="//m.toutiao.com/i6420533417456173570/" rel="nofollow" class="article_link clearfix" title="中国十大美女最多的城市排行榜：重庆排第三，第一名让人很意外">
-                        <div class="">
-                          <p class="relate-news-title dotdot line2 ">中国十大美女最多的城市排行榜：重庆排第三，第一名让人很意外</p>
-                          <div class="list_image">
-                            <ul class="clearfix">
-                              <li class="list_img_holder">
-                                <img src="http://p1.pstatp.com/list/1f8d0001709d3e5c8f0f"></li>
-                              <li class="list_img_holder">
-                                <img src="http://p3.pstatp.com/list/212e0004158faaab7c49"></li>
-                              <li class="list_img_holder">
-                                <img src="http://p9.pstatp.com/list/1f8d000172f5299d83c4"></li>
-                            </ul>
-                          </div>
-                          <div class="item_info">
-                            <span class="app_special space">打开APP</span>
-                            <span class="src space">历史评说</span>
-                            <span class="time" title="2017-06-14 08:00">
-                              <span>3小时前</span></span>
-                          </div>
-                        </div>
-                      </a>
-                    </section>
-                    <section data-group-id="6375278156505530625" class="feed-list appOnly app_special">
-                      <a href="//m.toutiao.com/i6375283239698825730/" rel="nofollow" class="article_link clearfix" title="不可思议的十六大自然景观！">
-                        <div class="">
-                          <p class="relate-news-title dotdot line2 ">不可思议的十六大自然景观！</p>
-                          <div class="list_image">
-                            <ul class="clearfix">
-                              <li class="list_img_holder">
-                                <img src="http://p1.pstatp.com/list/159d000031a8733d9b15"></li>
-                              <li class="list_img_holder">
-                                <img src="http://p3.pstatp.com/list/159d000031a7934f8783"></li>
-                              <li class="list_img_holder">
-                                <img src="http://p1.pstatp.com/list/159d000031a61ac0f6e9"></li>
-                            </ul>
-                          </div>
-                          <div class="item_info">
-                            <span class="app_special space">打开APP</span>
-                            <span class="src space">记者观察讯</span>
-                            <span class="time" title="2017-06-14 08:00">
-                              <span>3小时前</span></span>
-                          </div>
-                        </div>
-                      </a>
-                    </section>
-                  </div>
-                </div>
-              <!-- <div class="unfold-field">
-                  <a href="javascript:void(0)" class="unfold-field__text">查看更多</a></div>
-              </div> -->
-            </div>
-          </div>
-          <div></div>
-          <!-- react-empty: 43 --></div>
-        <!-- react-empty: 32 --></div>
+  <link rel="stylesheet" href="<?=site_url()?>public/css/article_97557fd.css" />
+  <!--[if lt IE 9]>
+  <script src="//s3.pstatp.com/toutiao/video_player/dist/videojs-ie8.js" charset="utf-8" crossorigin="anonymous"></script>
+  <script src="//s3.pstatp.com/toutiao/video_player/dist/examples/webfont.js" charset="utf-8" crossorigin="anonymous"></script>
+  <script>
+      WebFont.load({
+          custom: {
+              families: ['iconfont','yFont'],
+              urls:['//s3.pstatp.com/toutiao/video_player/dist/tt-video.css','//www.toutiao.com/static/style/lib/layout.css']
+          }
+      });
+  </script>
+  <![endif]-->
+
+</head>
+
+<body style="min-width: 1220px; overflow-x: hidden;">
+
+
+    <a href="/articles_news_society/" style="display:none;"></a>
+
+    <div class="y-wrap">
+
+
+<!-- 公共头部 -->
+<div id="header">
+  <div riot-tag="wtopbar" style="height: 34px; background: #222;">
+    <div class="y-box wtopbar">  <div class="y-left y-nav-topbar" riot-tag="nav"><div class="nav"> <ul class="y-box nav-list" ga_event="mh_channel"> <li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/" ga_event="mh_channel_recommend">推荐</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/news_hot/" ga_event="mh_channel_hot">热点</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/video/" ga_event="mh_channel_video">视频</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/news_image/" ga_event="mh_channel_image">图片</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/essay_joke/" ga_event="mh_channel_essay">段子</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/news_society/" ga_event="mh_channel_society">社会</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/news_entertainment/" ga_event="mh_channel_entertainment">娱乐</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/news_tech/" ga_event="mh_channel_tech">科技</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/news_car/" ga_event="mh_channel_car">汽车</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/news_sports/" ga_event="mh_channel_sports">体育</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/news_finance/" ga_event="mh_channel_finance">财经</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/news_military/" ga_event="mh_channel_military">军事</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/news_world/" ga_event="mh_channel_world">国际</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/news_fashion/" ga_event="mh_channel_fashion">时尚</a> </li><li class="y-left nav-item"> <a target="_blank" class="nav-link " href="/ch/news_travel/" ga_event="mh_channel_travel">旅游</a> </li><!--riot placeholder--> <li class="y-left nav-item nav-more"> <a class="nav-link" href="javascript:;"> 更多<i class="y-icon icon-more"></i> </a> <div class="nav-layer"> <ul class="nav-more-list"> <li class="nav-more-item"> <a target="_blank" href="/ch/news_discovery/" ga_event="mh_channel_discovery">探索</a> </li><li class="nav-more-item"> <a target="_blank" href="/ch/news_baby/" ga_event="mh_channel_baby">育儿</a> </li><li class="nav-more-item"> <a target="_blank" href="/ch/news_regimen/" ga_event="mh_channel_regimen">养生</a> </li><li class="nav-more-item"> <a target="_blank" href="/ch/news_story/" ga_event="mh_channel_story">故事</a> </li><li class="nav-more-item"> <a target="_blank" href="/ch/news_essay/" ga_event="mh_channel_essay">美文</a> </li><li class="nav-more-item"> <a target="_blank" href="/ch/news_game/" ga_event="mh_channel_game">游戏</a> </li><li class="nav-more-item"> <a target="_blank" href="/ch/news_history/" ga_event="mh_channel_history">历史</a> </li><li class="nav-more-item"> <a target="_blank" href="/ch/news_food/" ga_event="mh_channel_food">美食</a> </li><!--riot placeholder--> </ul> </div> </li> </ul> </div></div> <ul class="y-right"> <li class="tb-item userbox"> <div riot-tag="wuserbox" abtype="" pageid=""><div class="y-box wuserbox">   <div class="nav-login"> <a ga_event="nav_login" href="javascript:;"> <span>登录</span> </a>  </div> </div></div> </li> <li class="tb-item"> <a class="tb-link" href="javascript:void(0)">反馈</a> </li> <li class="tb-item"> <a class="tb-link" href="https://mp.toutiao.com/profile_introduction/infringement/complain" ga_event="mh_nav_complain" target="_blank">投诉侵权</a> </li> <li class="tb-item more"> <a class="tb-link" href="/about/">头条产品</a> <div class="layer"> <ul> <li> <a href="https://wenda.toutiao.com" class="layer-item" ga_event="mh_nav_others" target="_blank">问答</a> </li> <li> <a href="https://mp.toutiao.com/" class="layer-item" target="_blank" ga_event="mh_nav_others">头条号</a> </li> <li> <a href="https://tuchong.com/" class="layer-item" target="_blank" ga_event="mh_nav_others">图虫</a> </li> <li> <a href="http://www.dfic.cn/" target="_blank" ga_event="mh_nav_others" class="layer-item">东方 IC</a> </li> <li> <a href="https://ad.toutiao.com/promotion/?source2=pchometop" class="layer-item" target="_blank" ga_event="mh_nav_ad">广告投放</a> </li> </ul> </div> </li> </ul> <div id="J_userFeedback"></div> </div>
+  </div>
+
+  <div class="middlebar">
+  <div class="y-box middlebar-inner">
+    <div class="y-left logo-box">
+      <a class="logo-link" href="/" ga_event="go_home">
+        <img class="logo" src="//s3.pstatp.com/toutiao/resource/ntoutiao_web/static/image/logo_201f80d.png">
+      </a>
     </div>
-  </body>
 
+
+      <div class="y-left chinese-tag">
+        <a href="/" target="_blank" ga_event="click_index">首页</a>
+        /
+        <a href="/news_finance" target="_blank" ga_event="click_channel">财经</a>
+        /
+        <span class="text">正文</span>
+      </div>
+
+
+    <div class="y-right">
+      <div riot-tag="wsearch" style="margin-top: 9px; width: 340px;"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div riot-tag="login"></div>
+<div id="toast"></div>
+
+
+<div class="y-box container">
+  <div class="y-left">
+    <div class="y-box">
+      <div class="y-left index-left" style="width: 57px;margin-right: 10px;">
+        <div riot-tag="snsbox" style="display: none;"></div>
+      </div>
+      <div class="y-left index-middle" id="J_content">
+        <div id="article-main">
+
+
+  <h1 class="article-title">都说瑞士银行是世界上最安全的银行，你知道为什么吗？</h1>
+
+  <div class="articleInfo">
+
+
+    <span class="src">
+
+        童谣乐乐
+
+    </span>
+
+    <span class="time">2017-05-30 17:19</span>
+</div>
+
+  <div class="article-content"><div><p>瑞士是欧洲最富有的国家，也是全球最富有的国家之一。在瑞士有两大东西其它国家难以匹敌，一是钟表，二是银行。2004年年底，瑞士人均金融资产超过165000欧元，在岸(onshore)金融资产总计超过1万亿欧元。瑞士也是全球最大的离岸(offshore)金融中心，持有全球30%的离岸货币，总额接近2万亿欧元。</p><p><img src="http://p3.pstatp.com/large/22c90004850f37edf38a" img_width="745" img_height="344" alt="都说瑞士银行是世界上最安全的银行，你知道为什么吗？" inline="0"></p><p><img src="http://p9.pstatp.com/large/22cd0001bdea166ab640" img_width="673" img_height="446" alt="都说瑞士银行是世界上最安全的银行，你知道为什么吗？" inline="0"></p><p>自从1997年瑞士联合银行集团成立以来，资本和资产规模不断扩大，业绩持续增长，全球影响力大大增强，取得了骄人的成绩，由一家仅仅在欧元区内有一定影响的银行发展成为全球金融市场的有力竞争者。2005年一跃成为全球资产规模排名第一的全球金融业龙头老大。</p><p><img src="http://p3.pstatp.com/large/22cd0001c8908bd83b0c" img_width="720" img_height="472" alt="都说瑞士银行是世界上最安全的银行，你知道为什么吗？" inline="0"></p><p>瑞士银行一直被看作全球最安全的银行，据说世界上大约1/4的个人财富都被存放在这里。可以说，瑞士银行在为全世界管钱！</p><p><img src="http://p3.pstatp.com/large/150d00120082c466c6cd" img_width="314" img_height="207" alt="都说瑞士银行是世界上最安全的银行，你知道为什么吗？" inline="0"></p><p>奇葩的是，因为吸纳的存款太多，储户在银行存款不但没有利息，反而还得向银行交纳管理费！2015年初，瑞士央行宣布将活期存款利率从-0.25%降至-0.75%，这在世界银行业都是极为少见的。</p><p><img src="http://p3.pstatp.com/large/150c0006e65c770315f3" img_width="313" img_height="209" alt="都说瑞士银行是世界上最安全的银行，你知道为什么吗？" inline="0"></p><p>为什么那么多人把瑞士银行看做做安全的银行呢？</p><p>1、瑞士是永久中立国，所以瑞士不受战争影响，财产不会因战争失去。</p><p><img src="http://p3.pstatp.com/large/1dcc000b8e4af9814d8f" img_width="447" img_height="367" alt="都说瑞士银行是世界上最安全的银行，你知道为什么吗？" inline="0"></p><p class="pgc-img-caption">网传瑞士银行的”金币泳池”</p><p>永久中立可不是说说而已，需要强大的军事实力来维护。在冷战时期，瑞士的许多山都被“掏空”，建成了军事防御工事。根据瑞士国防部的说法，当下大约有1000座之前的军事掩体、地堡依然可用，其中大部分已经被私人收购，用于金库之用，所以具有做世界金库的天然优势。</p><p><img src="http://p9.pstatp.com/large/16ab0004ed09c84462d0" img_width="539" img_height="361" alt="都说瑞士银行是世界上最安全的银行，你知道为什么吗？" inline="0"></p><p><img src="http://p1.pstatp.com/large/16ab0004ed081c261a9e" img_width="640" img_height="444" alt="都说瑞士银行是世界上最安全的银行，你知道为什么吗？" inline="0"></p><p>2、瑞士经济发达、政局稳定，不会因经济变化一，瑞士是中立国，在世界大战期间保证储户财产不受战争威胁；</p><p><img src="http://p3.pstatp.com/large/22cd0001d391382af34c" img_width="860" img_height="644" alt="都说瑞士银行是世界上最安全的银行，你知道为什么吗？" inline="0"></p><p>3、全球首屈一指的安全保卫系统，确保财产绝对安全；</p><p><img src="http://p1.pstatp.com/large/22cf0001d21648de34f6" img_width="451" img_height="194" alt="都说瑞士银行是世界上最安全的银行，你知道为什么吗？" inline="0"></p><p>因此，瑞士银行有了“黑钱保险箱”之称，神秘的瑞士银行除了出现在电影中，公开的真实资料和图片都非常少，具体细节好奇的宝宝们只好抓紧时间把自己培养成富豪，到时候到瑞士存钱喊上小编一起哈，让小编跟着长长见识！</p></div></div>
+
+  <div class="y-box article-actions">
+
+<div class="labelList">
+  <i class="y-icon icon-tag"></i>
+  <ul class="label-list">
+
+    <li class="label-item"><a class="label-link" href="/search/?keyword=银行" target="_blank">银行</a></li>
+
+    <li class="label-item"><a class="label-link" href="/search/?keyword=瑞士银行" target="_blank">瑞士银行</a></li>
+
+    <li class="label-item"><a class="label-link" href="/search/?keyword=金融" target="_blank">金融</a></li>
+
+    <li class="label-item"><a class="label-link" href="/search/?keyword=经济" target="_blank">经济</a></li>
+
+  </ul>
+</div>
+
+    <div riot-tag="actionBox"></div>
+  </div>
+</div>
+
+        <div class="bd-bottom-1" ad-cursor name="adetail_main*bottom_1" id="J_ad_baidu_bottom"></div>
+        <a id="comment_area" href="#" style="display: inline-block;margin-bottom: 20px;"></a><!--评论锚点-->
+        <div riot-tag="comment"></div>
+      </div>
+    </div>
+  </div>
+  <div id="J_rindex" class="y-right index-right">
+
+<div class="module">
+  <div class="pgcInfo">
+    <p class="pgc-description"></p>
+    <ul>
+      <li class="pgc-article" ga_event="click_pgc_news">
+        <a href="/item/6432067184695968257" target="_blank" class="pgc-article-link">
+          中国古代七大辟邪神器，都是随处可见的平凡之物，效果却神奇！
+        </a>
+      </li>
+
+
+
+      <li class="pgc-article" ga_event="click_pgc_news">
+        <a href="/item/6431335622429901314" target="_blank" class="pgc-article-link">
+          历史总是惊人的相似，世界上真的有轮回吗？
+        </a>
+      </li>
+
+
+
+      <li class="pgc-article" ga_event="click_pgc_news">
+        <a href="/item/6432135567009382913" target="_blank" class="pgc-article-link">
+          史前文明最有力的14项证据，你相信它们的存在吗？
+        </a>
+      </li>
+
+
+
+      <li class="pgc-article" ga_event="click_pgc_news">
+        <a href="/item/6432151144763490817" target="_blank" class="pgc-article-link">
+          西安最有名的十大美食，每一种都能让味蕾起舞！
+        </a>
+      </li>
+
+
+    </ul>
+  </div>
+</div>
+
+
+    <div class="right-top-1 right-img"  name="adetail_right*top_1_zy"></div>
+    <div riot-tag="hotVideo"></div>
+    <div class="right-top-2 right-img"  name="adetail_right*top_2_zy"></div>
+
+
+    <div class="right-top-3 right-img"  name="adetail_right*top_3_zy"></div>
+    <div riot-tag="hotPicture"></div>
+    <div class="right-top-4 right-img"  name="adetail_right*top_4_zy"></div>
+    <div class="right-hover-1 right-img" id="imagindexhover"  name="adetail_right*hover_1_zy"></div>
+  </div>
+</div>
+
+<div class="action-feedback">
+  <div riot-tag="feedback"></div>
+</div>
+
+<!-- 公共尾部 -->
+<div id="footer">
+    <div>
+      <hr>
+        <span class="fitem">© 2017 今日头条 </span>
+        <a class="fitem" href="http://www.12377.cn/" target="_blank">中国互联网举报中心</a>
+        <a class="fitem" href="http://www.miibeian.gov.cn/" target="_blank">京ICP证140141号</a>
+        <a class="fitem" href="http://www.miibeian.gov.cn/" target="_blank">京ICP备12025439号-3</a>
+        <a class="fitem" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002002023" target="_blank" ga_event="click_about">
+            <img src="//s3.pstatp.com/toutiao/resource/ntoutiao_web/static/image/gongan_d0289dc.png">京公网安备 11000002002023号
+        </a>
+    </div>
+    <div>
+        <a class="fitem" href="/license/" class="icp" target="_blank">网络文化经营许可证</a>
+        <a class="fitem" href="/a3642705768/" target="_blank">跟帖评论自律管理承诺书</a>
+        <span class="fitem">违法和不良信息举报电话：010-58341833</span>
+        <span class="fitem">公司名称：北京字节跳动科技有限公司</span>
+    </div>
+</div>
+
+
+
+      <div riot-tag="promotion-ext" id="promotion-ext"></div>
+    </div>
+</body>
 </html>

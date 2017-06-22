@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Test extends CI_Controller {
+class Dragdown extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->database();
@@ -9,16 +9,16 @@ class Test extends CI_Controller {
 
 	}
 
-	public function test() {
+	public function bottom() {
 		$per_page = 10;
-		$table = 'zhuanti_detail';
+		$table = 'articles';
 		$page = $this->uri->segment(3);
 		$offset = $page == false?0:($per_page * ($page - 1)); // 计算偏移量
 
 
 		$this->db->select('*');
 		$this->db->from($table);
-		$this->db->where('det_title != ""');
+		// $this->db->where('det_title != ""');
 
 		$total = $this->db->count_all_results('', false);
 		$this->db->limit($per_page,$offset);
@@ -35,7 +35,19 @@ class Test extends CI_Controller {
 		$link = $this->pagination->create_links();
 
 		// $this->load->view('test/test',['list'=>$list,'link'=>$link]);
-		$this->load->view('test/test1');
+		$this->load->view('dragdown/bottom');
+	}
+
+	public function top() {
+		$this->load->view('dragdown/top');
+	}
+
+	public function multiload() {
+		$this->load->view('dragdown/multiple-load');
+	}
+
+	public function product() {
+		$this->load->view('dragdown/product-list');
 	}
 
 	public function test1() {
@@ -63,7 +75,7 @@ class Test extends CI_Controller {
 		$link = $this->pagination->create_links();
 
 		// $this->load->view('test/test',['list'=>$list,'link'=>$link]);
-		$this->load->view('test/test1');
+		$this->load->view('dragdown/test1');
 	}
 
 	public function putjson() {
